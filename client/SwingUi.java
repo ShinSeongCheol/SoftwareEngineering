@@ -110,23 +110,7 @@ public class SwingUi {
 	
 	//Userinterface를 구성하는 함수
 	public void changeUiToUserif() {
-		
-		String str = "";
-		
-		try {
-			BufferedWriter s_bw = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
-			BufferedReader s_br = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
-			s_bw.write(("getProduct\n"));
-			s_bw.flush();
-			str = s_br.readLine();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		StringTokenizer st = new StringTokenizer(str,"/");
-		StringTokenizer st1;
-		
+			
 		frame.setTitle("사용자 창");
 
 		frame.setBounds(100, 100, 547, 560);
@@ -142,142 +126,107 @@ public class SwingUi {
 
 		productLabel_1 = new JLabel("상품_1");
 		productLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_1.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		productLabel_2 = new JLabel("상품_2");
+		productLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_3 = new JLabel("상품_3");
+		productLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_4 = new JLabel("상품_4");
+		productLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_5 = new JLabel("상품_5");
+		productLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_6 = new JLabel("상품_6");
+		productLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_7 = new JLabel("상품_7");
+		productLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_8 = new JLabel("상품_8");
+		productLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_9 = new JLabel("상품_9");
+		productLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
+		productLabel_10 = new JLabel("상품_10");
+		productLabel_10.setHorizontalAlignment(SwingConstants.CENTER);
+
+		setProductLabel();
+		
 		productLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_1.getText());
 			}
 		});
-		panel.add(productLabel_1);
+		
 
-		productLabel_2 = new JLabel("상품_2");
-		productLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_2.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
 		productLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_2.getText());
 			}
 		});
-		panel.add(productLabel_2);
-
-		productLabel_3 = new JLabel("상품_3");
-		productLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_3.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		
 		productLabel_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_3.getText());
 			}
 		});
-		panel.add(productLabel_3);
-
-		productLabel_4 = new JLabel("상품_4");
-		productLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_4.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		
 		productLabel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_4.getText());
 			}
 		});
-		panel.add(productLabel_4);
-
-		productLabel_5 = new JLabel("상품_5");
-		productLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_5.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		
 		productLabel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_5.getText());
 			}
 		});
-		panel.add(productLabel_5);
-
-		productLabel_6 = new JLabel("상품_6");
-		productLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_6.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+	
 		productLabel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_6.getText());
 			}
 		});
-		panel.add(productLabel_6);
-
-		productLabel_7 = new JLabel("상품_7");
-		productLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_7.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		
 		productLabel_7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_7.getText());
 			}
 		});
-		panel.add(productLabel_7);
-
-		productLabel_8 = new JLabel("상품_8");
-		productLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_8.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		
 		productLabel_8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_8.getText());
 			}
 		});
-		panel.add(productLabel_8);
-
-		productLabel_9 = new JLabel("상품_9");
-		productLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_9.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		
 		productLabel_9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_9.getText());
 			}
 		});
-		panel.add(productLabel_9);
-
-		productLabel_10 = new JLabel("상품_10");
-		productLabel_10.setHorizontalAlignment(SwingConstants.CENTER);
-		if(st.hasMoreTokens()) {
-			st1 = new StringTokenizer(st.nextToken(),",");
-			productLabel_10.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
-		}
+		
 		productLabel_10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeUiTopostEnd(productLabel_10.getText());
 			}
 		});
+		
+		panel.add(productLabel_1);
+		panel.add(productLabel_2);
+		panel.add(productLabel_3);
+		panel.add(productLabel_4);
+		panel.add(productLabel_5);
+		panel.add(productLabel_6);
+		panel.add(productLabel_7);
+		panel.add(productLabel_8);
+		panel.add(productLabel_9);
 		panel.add(productLabel_10);
 
 		JPanel panel_1 = new JPanel();
@@ -288,7 +237,7 @@ public class SwingUi {
 		JTextField textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setText("검색창");
-		textField.setBounds(12, 6, 396, 34);
+		textField.setBounds(112, 6, 296, 34);
 		panel_1.add(textField);
 		textField.setColumns(10);
 
@@ -375,6 +324,15 @@ public class SwingUi {
 			}
 		});
 		panel_1.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("새로고침");
+		btnNewButton_2.setBounds(12, 6, 88, 35);
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				setProductLabel();
+			}
+		});
+		panel_1.add(btnNewButton_2);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(12, 461, 507, 50);
@@ -448,7 +406,7 @@ public class SwingUi {
 		lblNewLabel_1.setBounds(12, 10, 460, 36);
 		panel_1.add(lblNewLabel_1);
 
-		JButton btnNewButton_1 = new JButton("뒤로 가기");
+		JButton btnNewButton_1 = new JButton("창 닫기");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -477,6 +435,7 @@ public class SwingUi {
 				product.getPost(str);
 				product.setDATE();
 				product.addProduct(socket,id);
+				setProductLabel();
 				frame2.dispose();
 			}
 		});
@@ -562,7 +521,7 @@ public class SwingUi {
 		lblNewLabel_1.setText(sellerInfo);
 		panel_1.add(lblNewLabel_1);
 
-		JButton btnNewButton_1 = new JButton("뒤로 가기");
+		JButton btnNewButton_1 = new JButton("창 닫기");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -585,6 +544,7 @@ public class SwingUi {
 				finished.deleteProduct(P_NAME, id);
 				if(finished.finished()) {
 					frame2.dispose();
+					setProductLabel();
 				}else {
 					System.out.println("failure");
 				}
@@ -664,5 +624,89 @@ public class SwingUi {
 
 		Register.setVisible(true);
 	}
-	
+	//ProductLabel 이름을 새로고침하는 함수
+	public void setProductLabel() {
+		try {
+			BufferedWriter s_bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+			BufferedReader s_br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			s_bw.write(("getProduct\n"));
+			s_bw.flush();
+			String str = s_br.readLine();
+			StringTokenizer st = new StringTokenizer(str,"/");
+			StringTokenizer st1;
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_1.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_1.setText("상품_1");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_2.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_2.setText("상품_2");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_3.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_3.setText("상품_3");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_4.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_4.setText("상품_4");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_5.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_5.setText("상품_5");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_6.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_6.setText("상품_6");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_7.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_7.setText("상품_7");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_8.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_8.setText("상품_8");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_9.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_9.setText("상품_9");
+			}
+			if(st.hasMoreTokens()) {
+				st1 = new StringTokenizer(st.nextToken(),",");
+				productLabel_10.setText("물품명 : " + st1.nextToken() + ", 물품 개수 : " + st1.nextToken() + ", 날짜 : " + st1.nextToken());
+			}
+			else {
+				productLabel_10.setText("상품_10");
+			}
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
 }
