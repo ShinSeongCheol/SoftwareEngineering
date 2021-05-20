@@ -15,6 +15,7 @@ import java.util.StringTokenizer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -29,6 +30,7 @@ public class SwingUi {
 	private Socket socket;
 	private String id;
 	private JLabel productLabel_1,productLabel_2,productLabel_3,productLabel_4,productLabel_5,productLabel_6,productLabel_7,productLabel_8,productLabel_9,productLabel_10;
+	private JOptionPane jop;
 	
 	//SwingUi 생성자 
 	public SwingUi(Socket socket) {
@@ -75,6 +77,9 @@ public class SwingUi {
 					if (login.acceptLogin(socket)) {
 						id = login.getID(textField.getText());
 						changeUiToUserif();
+					}else {
+						jop = new JOptionPane();
+						jop.showMessageDialog(panel, "로그인 실패!");
 					}
 
 				}
@@ -435,6 +440,14 @@ public class SwingUi {
 				product.getPost(str);
 				product.setDATE();
 				product.addProduct(socket,id);
+				if(product.acceptProduct(socket)) {
+					jop = new JOptionPane();
+					jop.showMessageDialog(frame2, "게시물 등록 성공!");
+				}
+				else {
+					jop = new JOptionPane();
+					jop.showMessageDialog(frame2, "게시물 등록 실패!");
+				}
 				setProductLabel();
 				frame2.dispose();
 			}
@@ -543,10 +556,12 @@ public class SwingUi {
 			public void mouseClicked(MouseEvent e) {
 				finished.deleteProduct(P_NAME, id);
 				if(finished.finished()) {
+					jop = new JOptionPane();
+					jop.showMessageDialog(frame2, "판매 완료 되었습니다.!");
 					frame2.dispose();
 					setProductLabel();
 				}else {
-					System.out.println("failure");
+					jop.showMessageDialog(frame2, "판매 완료 실패!");
 				}
 			}
 		});
@@ -615,8 +630,12 @@ public class SwingUi {
 				join.getJS_NAME(textField_4.getText());
 				join.getJS_NUM(textField_5.getText());
 				join.tryJoin(socket);
-				join.acceptJoin(socket);
-				Register.dispose();
+				if(join.acceptJoin(socket)) {
+					Register.dispose();
+				}else {
+					jop = new JOptionPane();
+					jop.showMessageDialog(Register, "회원 가입 실패");
+				}
 			}
 		});
 		btnNewButton.setBounds(127, 340, 116, 30);

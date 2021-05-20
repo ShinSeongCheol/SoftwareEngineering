@@ -55,7 +55,13 @@ public class Server_RThread extends Thread {
 					break;
 				}
 				case "addProduct" : {
-					db.addProduct(st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken());
+					if(db.addProduct(st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken())) {
+						s_bw.write("게시물 등록 성공\n");
+						s_bw.flush();
+					}else {
+						s_bw.write("게시물 등록 실패\n");
+						s_bw.flush();
+					}
 					break;
 				}
 				case "getProductInfo" : {

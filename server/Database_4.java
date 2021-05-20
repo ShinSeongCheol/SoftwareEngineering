@@ -35,9 +35,8 @@ public class Database_4 {
 			pstmt.setString(4, NIN);
 			pstmt.setString(5, NAME);
 			pstmt.setString(6, NUMBER);
-			if(pstmt.execute()) {
-				return true;
-			}
+			pstmt.execute();
+			return true;
 		} catch (SQLException e) {
 		}
 		
@@ -76,9 +75,8 @@ public class Database_4 {
 			pstmt.setString(3, POST);
 			pstmt.setString(4, DATE);
 			pstmt.setString(5, ID);
-			if(pstmt.execute()) {
-				return true;
-			}
+			pstmt.execute();
+			return true;
 			
 		}catch(SQLException e) {
 		}
