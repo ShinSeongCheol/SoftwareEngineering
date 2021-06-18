@@ -10,7 +10,6 @@ import java.net.Socket;
 public class Login extends Join{
 	private String ID;
 	private String PASSWD;
-	public int LOGIN_O;
 	Socket socket;
 	
 	BufferedWriter s_bw;

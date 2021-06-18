@@ -14,25 +14,24 @@ public class Product {
 	private String P_Quantity;
 	private String POST;
 	private String date;
-	public int P_OUT;
 	
-	//¹°°Ç ÀÌ¸§À» ÀúÀåÇÏ´Â ¸Þ¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public void getP_NAME(String name) {
 		P_NAME = name;
 	}
-	//¼ö·®À» ÀúÀåÇÏ´Â ¸Þ¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public void getP_Quantity(String Quantity) {
 		P_Quantity = Quantity;
 	}
-	//°Ô½Ã¹° ³»¿ëÀ» ÀúÀåÇÏ´Â ¸Þ¼­µå
+	//ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public void getPost(String post) {
 		POST = post;
 	}
-	//ÇöÀç ³¯Â¥¸¦ ÀúÀåÇÏ´Â ¸Þ¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public void setDATE() {
 		date = new SimpleDateFormat("yy-MM-dd-hh-mm-ss").format(new Date(System.currentTimeMillis()));
 	}
-	//ÀúÀåµÈ Á¤º¸¸¦ ¼­¹ö¿¡ º¸³» ¹°Ç°À» Ãß°¡ÇÏ´Â ¸Þ¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public void addProduct(Socket socket,String id) {
 		try {
 			BufferedWriter s_bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -43,13 +42,13 @@ public class Product {
 			e.printStackTrace();
 		}
 	}
-	//¹°Ç°µî·Ï ¿©ºÎ¸¦ È®ÀÎÇÏ´Â ¸Þ¼­µå
+	//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public boolean acceptProduct(Socket socket) {
 		try {
 			String str;
 			BufferedReader s_br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			str = s_br.readLine();
-			if(str.equals("°Ô½Ã¹° µî·Ï ¼º°ø")) {
+			if(str.equals("ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")) {
 				return true;
 			}
 		} catch (IOException e) {

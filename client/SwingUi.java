@@ -483,7 +483,7 @@ public class SwingUi {
 		try {
 			BufferedWriter s_bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			BufferedReader s_br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			s_bw.write("getPost," + P_NAME + "\n");
+			s_bw.write("getPost," + P_NAME + "," + P_Quantity + "," + Date + "\n");
 			s_bw.flush();
 			tempPost = s_br.readLine();
 			

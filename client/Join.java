@@ -14,7 +14,6 @@ public class Join {
 	private String ADDRESS;
 	private String ID;
 	private String PASSWD;
-	public int JOIN_O;
 	
 	//사용자가 입력한 이름을 받아오는 메서드
 	public String getJS_NAME(String name) {

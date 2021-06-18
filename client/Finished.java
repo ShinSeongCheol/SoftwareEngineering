@@ -8,8 +8,6 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 
 public class Finished extends Product{
-	public int F_IN;
-	public int F_OUT;
 	Socket socket;
 	//Finished 클래스 생성자
 	public Finished(Socket socket) {

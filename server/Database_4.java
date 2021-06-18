@@ -146,12 +146,14 @@ public class Database_4 {
 	}
 	
 	//게시물 내용을 DB에서 가져오는 메서드
-	public String getPost(String P_NAME) {
+	public String getPost(String P_NAME, String P_Quantity, String Date) {
 		connect();
 		String str = null;
 		try {
-			pstmt = con.prepareStatement("select POST from products where P_NAME=?");
+			pstmt = con.prepareStatement("select POST from products where P_NAME=? and P_Quantity=? and Date=?");
 			pstmt.setString(1, P_NAME);
+			pstmt.setString(2, P_Quantity);
+			pstmt.setString(3, Date);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				str = rs.getString("POST");

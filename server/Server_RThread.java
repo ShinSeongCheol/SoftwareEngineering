@@ -28,7 +28,6 @@ public class Server_RThread extends Thread {
 			s_bw = new BufferedWriter(new OutputStreamWriter(R_socket.getOutputStream()));
 			while (true) {
 				str = s_br.readLine();
-				System.out.println(str + "\n");
 				StringTokenizer st = new StringTokenizer(str, ",");
 				switch (st.nextToken()) {
 				case "Login": {
@@ -91,7 +90,7 @@ public class Server_RThread extends Thread {
 					break;
 				}
 				case "getPost" : {
-					s_bw.write(db.getPost(st.nextToken()) + "\n");
+					s_bw.write(db.getPost(st.nextToken(),st.nextToken(),st.nextToken()) + "\n");
 					s_bw.flush();
 					break;
 				}

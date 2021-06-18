@@ -6,8 +6,6 @@ import java.net.Socket;
 
 public class Server {
 
-	Socket sds;
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Server_RThread SR;
